@@ -68,7 +68,7 @@ export const AbilitiesContent = styled.div`
     margin-top: 1rem;
     border-radius: 0.5rem;
     background: rgba(0, 0, 0, 0.6);
-    max-height: 10rem;
+    max-height: 11rem;
     overflow-y: auto;
 
     .powerDescribe{

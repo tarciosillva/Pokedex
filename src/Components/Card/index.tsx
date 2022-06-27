@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import { pokemonProps } from "../../Types/pokemonType"
 
-import { Container,Name, PokemonId } from "./style"
+import { Container, Name, PokemonId } from "./style"
 
 interface pokeCardProps {
     url: string,
@@ -23,7 +23,9 @@ const PokeCard: React.FC<pokeCardProps> = (props) => {
     return (
         <Container>
             <PokemonId><p>{pokemon?.id}</p></PokemonId>
-            <img src={pokemon?.sprites?.other.dream_world.front_default} alt={props.name + 'imagem'} />
+            <figure>
+                <img src={pokemon?.sprites?.other.dream_world.front_default} alt={props.name + 'imagem'} />
+            </figure>
             <Name>{props.name}</Name>
         </Container>
     )

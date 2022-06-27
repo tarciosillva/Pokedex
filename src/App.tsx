@@ -6,6 +6,9 @@ import { PokeProvider } from "./Context/PokeContext"
 import Pokedex from "./Pages/Pokedex";
 import Pokemon from "./Pages/Pokemon";
 
+import pokemonAudioTheme from "./audio/pokemonTheme.mp3"
+
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +20,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </PokeProvider>
+      <audio src={pokemonAudioTheme} autoPlay></audio>
       <GlobalStyle />
     </div>
   )

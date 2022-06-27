@@ -7,11 +7,13 @@ import PokeCard from "../../Components/Card";
 import { Link } from "react-router-dom";
 import { Container, GridItems, ActionsConntainer } from "./style"
 
+
 const Pokedex: React.FC = () => {
     const { pokemons } = UsePokeContext()
 
     return (
         <Container>
+           
             <ActionsConntainer>
                 <ShowLimitPokemons />
                 <FindPokemon />

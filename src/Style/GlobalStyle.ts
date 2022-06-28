@@ -7,6 +7,9 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         text-decoration:none;
         --dark-color:#3c3c3c;
+        --pokemon-font-primary:'Pokemon Solid', sans-serif;
+        --yellow-color:#ffcd00;
+        --blue-color:#356abc;
     
         body{
             background-color: #E5E5E5;

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     div{
-        padding: 1rem;
         display: flex;
         align-items: center;
         img{

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { useParams } from "react-router-dom"
 
-import { Container, Name, FlexContent, Id, AbilitiesContent, TypeContent, MovesContent, TitleSection } from "./style"
+import { Container, Name, FlexContent, Figure, AbilitiesContent, TypeContent, MovesContent, TitleSection, PowerDescribe } from "./style"
 import { pokemonTypeProps } from "../../Types/pokemonType"
 
 import PokemonTypes from "../../Components/PokemonType"
@@ -25,8 +25,6 @@ interface statsProps {
         name: string
     }
 }
-
-
 
 interface pokemonProps {
     id: number,
@@ -56,10 +54,11 @@ const Pokemon: React.FC = () => {
         <Container>
             <div>
                 <FlexContent>
-                    <Name>{pokemon?.name}</Name>
-                    <Id>Nº {pokemon?.id}</Id>
+                    <Name>{pokemon?.id} {pokemon?.name}</Name>
                 </FlexContent>
-                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`} alt={'Imagem ' + pokemon?.name} />
+                <Figure>
+                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`} alt={'Imagem ' + pokemon?.name} />
+                </Figure>
 
                 <TypeContent>
                     <p className="type">Type</p>
@@ -74,12 +73,15 @@ const Pokemon: React.FC = () => {
             <div>
                 <AbilitiesContent>
                     <TitleSection>Abilities</TitleSection>
-                    {pokemon?.abilities.map((element, index) => (
-                        <p key={index} className={'powerDescribe'}>
-                            <img src="https://i.pinimg.com/originals/89/a1/4d/89a14d3b81546e2fe51cbf4d0d6b8b60.gif" alt="power pokemon icon" />
-                            {element.ability.name}
-                        </p>
-                    ))}
+                    <PowerDescribe>
+                        {pokemon?.abilities.map((element, index) => (
+                            <>
+                                <img src="https://i.pinimg.com/originals/89/a1/4d/89a14d3b81546e2fe51cbf4d0d6b8b60.gif" alt="power pokemon icon" />
+                                <p>{element.ability.name}</p>
+                                &nbsp;&nbsp;&nbsp;
+                            </>
+                        ))}
+                    </PowerDescribe>
                 </AbilitiesContent>
 
                 <MovesContent>

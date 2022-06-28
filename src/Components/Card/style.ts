@@ -54,5 +54,6 @@ export const PokemonId = styled.div`
     margin: 0.25rem;
     font-weight: bold;
     color: #fff;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 `

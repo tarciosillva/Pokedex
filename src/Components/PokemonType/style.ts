@@ -15,6 +15,15 @@ export const Container = styled.div`
                 text-transform: capitalize;
             }
         }
+
+        @media${`(max-width: 425px)`}{
+            img{
+                width: 1.5rem;
+            }
+            p{
+                font-size: 1.25rem;
+            }
+        }
     }
 `
 

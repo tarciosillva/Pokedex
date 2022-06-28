@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import {devices} from "../../Style/Resposive"
+
 export const Container = styled.div`
     background-image: url('https://1.bp.blogspot.com/-iIDPZD1siWs/XpBogZh4ExI/AAAAAAAABsw/scxMSkyaQbkJaVSXCrCpe81TQLBpTjuFgCLcBGAsYHQ/s1600/NSwitch_PokemonSwordShield_01.jpg');
     background-repeat: no-repeat;
@@ -10,6 +12,13 @@ export const Container = styled.div`
 
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+
+    @media${`(max-width: 768px)`}{
+        display: block;
+        max-height: 100vh;
+        overflow-y:auto;
+    }
 `
 
 export const FlexContent = styled.div`
@@ -28,6 +37,29 @@ export const Figure=styled.figure`
             transform: scale(1.1);
         }
     }
+
+
+    @media${`(max-width: 1440px)`}{
+        img{
+            width:23rem;
+        }
+    }
+
+    @media${`(max-width: 768px)`}{
+        display:flex;
+        justify-content:center;
+        img{
+            width:25rem;
+        }
+    }
+
+    @media${`(max-width: 425px)`}{
+        display:flex;
+        justify-content:center;
+        img{
+            width:20rem;
+        }
+    }
 `
 
 export const Name = styled.h1`
@@ -39,6 +71,10 @@ export const Name = styled.h1`
     letter-spacing: 0.3rem;
     ::first-letter{
         text-transform: capitalize;
+    }
+
+    @media${`(max-width: 1440px)`}{
+        font-size: 3rem;
     }
 `
 
@@ -58,6 +94,16 @@ export const TypeContent = styled.div`
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 1rem;
     }
+
+    @media${`(max-width: 768px)`}{
+        width: 100%;
+    }
+
+    @media${`(max-width: 425px)`}{
+        .type{
+            font-size: 1.5rem;
+        }
+    }
 `
 
 export const MovesContent = styled.div`
@@ -75,6 +121,11 @@ export const MovesContent = styled.div`
         }
         text-align: justify;
     }
+
+    @media${`(max-width: 1440px)`}{
+        font-size: 1rem;
+        height: 15rem;
+    }
 `
 
 export const AbilitiesContent = styled.div`
@@ -84,6 +135,10 @@ export const AbilitiesContent = styled.div`
     background: rgba(0, 0, 0, 0.6);
     max-height: 11rem;
     overflow-y: auto;
+
+    @media${`(max-width: 1440px)`}{
+        height: auto;
+    }
 `
 export const PowerDescribe = styled.div`
     display: flex;
@@ -100,6 +155,31 @@ export const PowerDescribe = styled.div`
             text-transform: capitalize;
         }
     }
+
+    @media${`(max-width: 1440px)`}{
+        font-size: 1rem;
+        img{
+            width: 1.1rem;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+    }
+
+    @media${`(max-width: 768px)`}{
+        font-size:1.5rem;
+        img{
+            width: 2rem;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+    }
+
+    @media${`(max-width: 425px)`}{
+        font-size: 1.25rem;
+        img{
+            width: 1.5rem;
+        }
+    }
 `
 
 export const TitleSection = styled.p`
@@ -107,5 +187,18 @@ export const TitleSection = styled.p`
     font-weight: 700;
     font-size: 2rem;
     margin-bottom: 1rem;
+
+    @media${`(max-width: 425px)`}{
+        font-size: 1.25rem;
+    }
+`
+export const StatsContainer=styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-gap:2rem;
+    justify-content: center;
+    margin-top: 1rem;
+    max-height: 20rem;
+    overflow-y: auto;
 `
 

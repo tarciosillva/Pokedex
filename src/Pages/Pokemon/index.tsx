@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { useParams } from "react-router-dom"
 
-import { Container, Name, FlexContent, Figure, AbilitiesContent, TypeContent, MovesContent, TitleSection, PowerDescribe } from "./style"
+import { Container, Name, FlexContent, Figure, AbilitiesContent, TypeContent, MovesContent, TitleSection, PowerDescribe, StatsContainer } from "./style"
+
+import Stats from "../../Components/Stats"
+
 import { pokemonTypeProps } from "../../Types/pokemonType"
 
 import PokemonTypes from "../../Components/PokemonType"
@@ -49,7 +52,6 @@ const Pokemon: React.FC = () => {
         })
     }, [])
 
-
     return (
         <Container>
             <div>
@@ -92,6 +94,13 @@ const Pokemon: React.FC = () => {
                         ))}
                     </p>
                 </MovesContent>
+                <StatsContainer>
+                    {pokemon?.stats.map((element, index) => (
+
+                        <Stats key={index} statsName={element.stat.name} value={element.base_stat} />
+
+                    ))}
+                </StatsContainer>
             </div>
         </Container>
     )

@@ -3,19 +3,11 @@ import React, { useState } from "react";
 
 import { UsePokeContext } from "../../Context/PokeContext"
 
-import {Container,Button, Input} from "../style"
+import { Container, Button, Input } from "../style"
 
 const ShowLimitPokemons: React.FC = () => {
-    const { setPokemons } = UsePokeContext()
-    const [limit, setLimit] = useState<number>(15)
+    const { changeLimit, setLimit } = UsePokeContext()
 
-    const changeLimit = () => {
-        if (limit) {
-            axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=${limit}`).then((response) => {
-                setPokemons(response.data.results)
-            })
-        }
-    }
 
     return (
         <Container>

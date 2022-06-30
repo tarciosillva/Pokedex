@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import { UsePokeContext } from "../../Context/PokeContext"
 
@@ -7,12 +8,10 @@ import ShowLimitPokemons from "../../Components/ShowLimitPokemons";
 import FindPokemon from "../../Components/FindPokemon";
 import PokeCard from "../../Components/Card";
 
-import { Link } from "react-router-dom";
-import { AboutMe, Container, GridItems, ActionsConntainer } from "./style"
-
+import { AboutMe, Container, GridItems, ActionsConntainer, ContentButton, Button } from "./style"
 
 const Pokedex: React.FC = () => {
-    const { pokemons } = UsePokeContext()
+    const { pokemons, showMorePokemons } = UsePokeContext()
 
     return (
         <Container>
@@ -32,6 +31,9 @@ const Pokedex: React.FC = () => {
                     </Link>
                 ))}
             </GridItems>
+            <ContentButton >
+                <Button onClick={() => showMorePokemons()}>Exibir mais</Button>
+            </ContentButton>
         </Container>
     )
 }

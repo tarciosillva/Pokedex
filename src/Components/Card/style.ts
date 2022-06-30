@@ -30,7 +30,6 @@ export const Container = styled.div`
 
     :hover{
         box-shadow: 0px 0px 20px 5px #e1e1e1;
-        transform: perspective(12rem) rotateY(5deg);
     }
 `
 
@@ -38,7 +37,7 @@ export const Name = styled.p`
     font-family: var(--pokemon-font-primary);
     color: var(--yellow-color);
     -webkit-text-stroke-color: var(--blue-color);
-    -webkit-text-stroke-width: 0.15rem;
+    -webkit-text-stroke-width: 0.16rem;
     font-size: 2rem;
     text-align: center;
     ::first-letter{

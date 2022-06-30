@@ -46,6 +46,28 @@ export const ActionsConntainer = styled.div`
     padding: 1rem;
     background-color: #fff;
     margin-bottom: 1rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 0.5rem;
+`
+
+export const ContentButton=styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+`
+
+export const Button=styled.button`
+    border: none;
+    padding: 0.85rem;
+    border-radius: 0.5rem;
+    background-color: var(--blue-color);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 0.2rem solid #fff;
+    transition: 0.8s;
+    cursor: pointer;
+    :hover{
+        background-color: #072d68;
+    }
 `

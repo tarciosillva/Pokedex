@@ -7,9 +7,6 @@ import Pokedex from "./Pages/Pokedex";
 import Pokemon from "./Pages/Pokemon";
 import AboutMe from "./Pages/AboutMe";
 
-import pokemonAudioTheme from "./audio/pokemonTheme.mp3"
-
-
 function App() {
   return (
     <div className="App">
@@ -23,7 +20,6 @@ function App() {
         </BrowserRouter>
       </PokeProvider>
       <GlobalStyle />
-      <audio src={pokemonAudioTheme} autoPlay></audio>
     </div>
   )
 }
